@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_feature_sections",
+  "info": {
+    "displayName": "Feature section",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "feature": {
+      "type": "component",
+      "component": "blocks.feature-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

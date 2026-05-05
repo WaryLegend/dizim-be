@@ -1,0 +1,58 @@
+{
+  "collectionName": "components_blocks_feature_items",
+  "info": {
+    "displayName": "Feature Item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "isHighLight": {
+      "type": "boolean",
+      "default": false
+    },
+    "background": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "isHighLight"
+            },
+            false
+          ]
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "cta": {
+      "type": "component",
+      "component": "links.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

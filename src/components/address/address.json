@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_address_addresses",
+  "info": {
+    "displayName": "Address",
+    "icon": "house"
+  },
+  "options": {},
+  "attributes": {
+    "building": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Headquater",
+        "Branch"
+      ]
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

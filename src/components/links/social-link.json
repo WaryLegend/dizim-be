@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_links_social_links",
+  "info": {
+    "displayName": "SocialLink",
+    "icon": "globe"
+  },
+  "options": {},
+  "attributes": {
+    "platform": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_blocks_values_sections",
+  "info": {
+    "displayName": "Values section",
+    "icon": "handHeart"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "Value": {
+      "type": "component",
+      "component": "blocks.value-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
