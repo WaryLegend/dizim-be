@@ -65,6 +65,20 @@
       "target": "plugin::users-permissions.role",
       "inversedBy": "users",
       "configurable": false
+    },
+    "phone": {
+      "type": "string"
+    },
+    "usertype": {
+      "type": "enumeration",
+      "enum": [
+        "individual_creator",
+        "small_business_owner",
+        "marketing_agency",
+        "enterprise",
+        "student",
+        "other"
+      ]
     }
   }
 }

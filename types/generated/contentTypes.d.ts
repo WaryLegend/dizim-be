@@ -1323,6 +1323,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    phone: Schema.Attribute.String;
     provider: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     resetPasswordToken: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1339,6 +1340,16 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 3;
       }>;
+    usertype: Schema.Attribute.Enumeration<
+      [
+        'individual_creator',
+        'small_business_owner',
+        'marketing_agency',
+        'enterprise',
+        'student',
+        'other',
+      ]
+    >;
   };
 }
 
