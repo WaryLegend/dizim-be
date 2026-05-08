@@ -79,6 +79,12 @@
         "student",
         "other"
       ]
+    },
+    "contact_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::contact-request.contact-request",
+      "mappedBy": "users_permissions_user"
     }
   }
 }
