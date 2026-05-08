@@ -65,6 +65,26 @@
       "target": "plugin::users-permissions.role",
       "inversedBy": "users",
       "configurable": false
+    },
+    "phone": {
+      "type": "string"
+    },
+    "usertype": {
+      "type": "enumeration",
+      "enum": [
+        "individual_creator",
+        "small_business_owner",
+        "marketing_agency",
+        "enterprise",
+        "student",
+        "other"
+      ]
+    },
+    "contact_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::contact-request.contact-request",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

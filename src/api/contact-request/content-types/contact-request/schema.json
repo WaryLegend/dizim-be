@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_requests",
+  "info": {
+    "singularName": "contact-request",
+    "pluralName": "contact-requests",
+    "displayName": "Contact_request"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "contactEmail": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "inquiryType": {
+      "type": "enumeration",
+      "enum": [
+        "general_inquiry",
+        "sales",
+        "support",
+        "partnership",
+        "demo_request",
+        "other"
+      ]
+    },
+    "message": {
+      "type": "text"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "contact_requests"
+    }
+  }
+}
