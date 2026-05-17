@@ -93,6 +93,20 @@ export interface BlocksHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksShowsSection extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_shows_sections';
+  info: {
+    displayName: 'Shows section';
+    icon: 'handHeart';
+  };
+  attributes: {
+    cta: Schema.Attribute.Component<'links.button', false>;
+    description: Schema.Attribute.Text;
+    shows: Schema.Attribute.Relation<'oneToMany', 'api::show.show'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface BlocksTestimonialSection extends Struct.ComponentSchema {
   collectionName: 'components_blocks_testimonial_sections';
   info: {
@@ -106,20 +120,6 @@ export interface BlocksTestimonialSection extends Struct.ComponentSchema {
       'api::testimonial.testimonial'
     >;
     title: Schema.Attribute.String;
-  };
-}
-
-export interface BlocksValuesSection extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_values_sections';
-  info: {
-    displayName: 'Shows section';
-    icon: 'handHeart';
-  };
-  attributes: {
-    cta: Schema.Attribute.Component<'links.button', false>;
-    description: Schema.Attribute.Text;
-    shows: Schema.Attribute.Relation<'oneToMany', 'api::show.show'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -162,8 +162,8 @@ declare module '@strapi/strapi' {
       'blocks.feature-item': BlocksFeatureItem;
       'blocks.feature-section': BlocksFeatureSection;
       'blocks.hero-section': BlocksHeroSection;
+      'blocks.shows-section': BlocksShowsSection;
       'blocks.testimonial-section': BlocksTestimonialSection;
-      'blocks.values-section': BlocksValuesSection;
       'links.button': LinksButton;
       'links.social-link': LinksSocialLink;
     }

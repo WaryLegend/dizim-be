@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_blocks_values_sections",
+  "collectionName": "components_blocks_shows_sections",
   "info": {
     "displayName": "Shows section",
     "icon": "handHeart"
@@ -8,7 +8,8 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": false
     },
     "description": {
       "type": "text"

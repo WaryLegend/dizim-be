@@ -625,9 +625,9 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       [
         'blocks.feature-section',
         'blocks.hero-section',
-        'blocks.values-section',
         'blocks.cta-section',
         'blocks.testimonial-section',
+        'blocks.shows-section',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
