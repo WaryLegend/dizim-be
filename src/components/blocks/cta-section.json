@@ -6,19 +6,10 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "sub_title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text"
-    },
-    "cta": {
+    "cta_block": {
       "type": "component",
-      "component": "links.button",
-      "repeatable": false
+      "component": "blocks.cta-block",
+      "repeatable": true
     }
   },
   "config": {}

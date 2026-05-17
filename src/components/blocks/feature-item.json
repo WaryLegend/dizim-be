@@ -15,27 +15,6 @@
     },
     "icon": {
       "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "isHighLight": {
-      "type": "boolean",
-      "default": false
-    },
-    "background": {
-      "type": "media",
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "isHighLight"
-            },
-            false
-          ]
-        }
-      },
       "multiple": false,
       "allowedTypes": [
         "images"
@@ -43,12 +22,12 @@
     },
     "image": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "allowedTypes": [
         "images"
       ]
     },
-    "cta": {
+    "button": {
       "type": "component",
       "component": "links.button",
       "repeatable": false

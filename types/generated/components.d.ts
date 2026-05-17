@@ -13,6 +13,21 @@ export interface AddressAddress extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksCtaBlock extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_cta_blocks';
+  info: {
+    displayName: 'CTA block';
+    icon: 'cursor';
+  };
+  attributes: {
+    bg_color: Schema.Attribute.String;
+    cta: Schema.Attribute.Component<'links.button', false>;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface BlocksCtaSection extends Struct.ComponentSchema {
   collectionName: 'components_blocks_cta_sections';
   info: {
@@ -20,10 +35,7 @@ export interface BlocksCtaSection extends Struct.ComponentSchema {
     icon: 'cursor';
   };
   attributes: {
-    cta: Schema.Attribute.Component<'links.button', false>;
-    description: Schema.Attribute.Text;
-    sub_title: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    cta_block: Schema.Attribute.Component<'blocks.cta-block', true>;
   };
 }
 
@@ -34,12 +46,10 @@ export interface BlocksFeatureItem extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    background: Schema.Attribute.Media<'images'>;
-    cta: Schema.Attribute.Component<'links.button', false>;
+    button: Schema.Attribute.Component<'links.button', false>;
     description: Schema.Attribute.Blocks;
-    icon: Schema.Attribute.Media<'images', true>;
-    image: Schema.Attribute.Media<'images', true>;
-    isHighLight: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    icon: Schema.Attribute.Media<'images'>;
+    image: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -51,9 +61,10 @@ export interface BlocksFeatureSection extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
+    cta: Schema.Attribute.Component<'links.button', false>;
     description: Schema.Attribute.Text;
     feature: Schema.Attribute.Component<'blocks.feature-item', true>;
-    heading: Schema.Attribute.String;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -64,8 +75,16 @@ export interface BlocksHeroSection extends Struct.ComponentSchema {
     icon: 'crown';
   };
   attributes: {
-    background: Schema.Attribute.Media<'images'>;
-    sub_title: Schema.Attribute.String &
+    badge: Schema.Attribute.String;
+    buttons: Schema.Attribute.Component<'links.button', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+    image: Schema.Attribute.Media<'images'>;
+    subtitle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'ever easy'>;
     title: Schema.Attribute.String &
@@ -74,15 +93,18 @@ export interface BlocksHeroSection extends Struct.ComponentSchema {
   };
 }
 
-export interface BlocksValueItem extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_value_items';
+export interface BlocksTestimonialSection extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_testimonial_sections';
   info: {
-    displayName: 'Value Item';
-    icon: 'handHeart';
+    displayName: 'Testimonial section';
+    icon: 'star';
   };
   attributes: {
-    description: Schema.Attribute.Text;
-    icon: Schema.Attribute.Media<'images'>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    testimonials: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
+    >;
     title: Schema.Attribute.String;
   };
 }
@@ -90,12 +112,14 @@ export interface BlocksValueItem extends Struct.ComponentSchema {
 export interface BlocksValuesSection extends Struct.ComponentSchema {
   collectionName: 'components_blocks_values_sections';
   info: {
-    displayName: 'Values section';
+    displayName: 'Shows section';
     icon: 'handHeart';
   };
   attributes: {
+    cta: Schema.Attribute.Component<'links.button', false>;
+    description: Schema.Attribute.Text;
+    shows: Schema.Attribute.Relation<'oneToMany', 'api::show.show'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    Value: Schema.Attribute.Component<'blocks.value-item', true>;
   };
 }
 
@@ -105,7 +129,10 @@ export interface LinksButton extends Struct.ComponentSchema {
     displayName: 'Button';
   };
   attributes: {
-    button_style: Schema.Attribute.Enumeration<['Filled', 'Ghost', 'Shaded']>;
+    button_style: Schema.Attribute.Enumeration<
+      ['Text', 'Filled', 'Ghost', 'Shaded']
+    >;
+    color: Schema.Attribute.String;
     href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'#'>;
     text: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -130,11 +157,12 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'address.address': AddressAddress;
+      'blocks.cta-block': BlocksCtaBlock;
       'blocks.cta-section': BlocksCtaSection;
       'blocks.feature-item': BlocksFeatureItem;
       'blocks.feature-section': BlocksFeatureSection;
       'blocks.hero-section': BlocksHeroSection;
-      'blocks.value-item': BlocksValueItem;
+      'blocks.testimonial-section': BlocksTestimonialSection;
       'blocks.values-section': BlocksValuesSection;
       'links.button': LinksButton;
       'links.social-link': LinksSocialLink;

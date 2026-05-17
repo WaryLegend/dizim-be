@@ -17,10 +17,15 @@
     "button_style": {
       "type": "enumeration",
       "enum": [
+        "Text",
         "Filled",
         "Ghost",
         "Shaded"
       ]
+    },
+    "color": {
+      "type": "string",
+      "regex": "^#([A-Fa-f0-9]{3,4}){1,2}$"
     }
   },
   "config": {}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_blocks_cta_blocks",
+  "info": {
+    "displayName": "CTA block",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "cta": {
+      "type": "component",
+      "component": "links.button",
+      "repeatable": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bg_color": {
+      "type": "string",
+      "regex": "^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$"
+    }
+  },
+  "config": {}
+}

@@ -102,14 +102,14 @@
       "component": "links.social-link",
       "repeatable": true
     },
-    "cta": {
+    "cta_block": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "links.button",
+      "component": "blocks.cta-block",
       "repeatable": false
     }
   }

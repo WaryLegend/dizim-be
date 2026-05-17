@@ -41,7 +41,9 @@
       "components": [
         "blocks.feature-section",
         "blocks.hero-section",
-        "blocks.values-section"
+        "blocks.values-section",
+        "blocks.cta-section",
+        "blocks.testimonial-section"
       ]
     }
   }

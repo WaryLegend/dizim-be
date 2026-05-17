@@ -558,7 +558,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    cta: Schema.Attribute.Component<'links.button', false> &
+    cta_block: Schema.Attribute.Component<'blocks.cta-block', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -622,7 +622,13 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
-      ['blocks.feature-section', 'blocks.hero-section', 'blocks.values-section']
+      [
+        'blocks.feature-section',
+        'blocks.hero-section',
+        'blocks.values-section',
+        'blocks.cta-section',
+        'blocks.testimonial-section',
+      ]
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -774,6 +780,33 @@ export interface ApiPricingPlanPricingPlan extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiShowShow extends Struct.CollectionTypeSchema {
+  collectionName: 'shows';
+  info: {
+    displayName: 'Show';
+    pluralName: 'shows';
+    singularName: 'show';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::show.show'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1358,6 +1391,7 @@ declare module '@strapi/strapi' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::partner.partner': ApiPartnerPartner;
       'api::pricing-plan.pricing-plan': ApiPricingPlanPricingPlan;
+      'api::show.show': ApiShowShow;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
