@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_blocks_step_sections",
+  "info": {
+    "displayName": "Step section",
+    "icon": "question"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "cta": {
+      "type": "component",
+      "component": "links.button",
+      "repeatable": false
+    },
+    "steps": {
+      "type": "component",
+      "component": "blocks.step",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

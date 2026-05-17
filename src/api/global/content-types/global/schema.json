@@ -73,6 +73,15 @@
       },
       "required": true
     },
+    "open_hours": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "8AM to 5PM"
+    },
     "location": {
       "type": "component",
       "pluginOptions": {
@@ -82,15 +91,6 @@
       },
       "component": "address.address",
       "repeatable": true
-    },
-    "open_hours": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "default": "8AM to 5PM"
     },
     "SocialMedia": {
       "type": "component",
@@ -111,6 +111,16 @@
       },
       "component": "blocks.cta-block",
       "repeatable": false
+    },
+    "logo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "elements.logo",
+      "repeatable": true
     }
   }
 }

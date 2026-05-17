@@ -49,7 +49,6 @@ export interface BlocksFeatureItem extends Struct.ComponentSchema {
     button: Schema.Attribute.Component<'links.button', false>;
     description: Schema.Attribute.Blocks;
     icon: Schema.Attribute.Media<'images'>;
-    image: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -61,7 +60,6 @@ export interface BlocksFeatureSection extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    cta: Schema.Attribute.Component<'links.button', false>;
     description: Schema.Attribute.Text;
     feature: Schema.Attribute.Component<'blocks.feature-item', true>;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
@@ -83,6 +81,7 @@ export interface BlocksHeroSection extends Struct.ComponentSchema {
         },
         number
       >;
+    description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
     subtitle: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -107,6 +106,34 @@ export interface BlocksShowsSection extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksStep extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_steps';
+  info: {
+    displayName: 'Step';
+    icon: 'question';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images'>;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface BlocksStepSection extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_step_sections';
+  info: {
+    displayName: 'Step section';
+    icon: 'question';
+  };
+  attributes: {
+    cta: Schema.Attribute.Component<'links.button', false>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    steps: Schema.Attribute.Component<'blocks.step', true>;
+  };
+}
+
 export interface BlocksTestimonialSection extends Struct.ComponentSchema {
   collectionName: 'components_blocks_testimonial_sections';
   info: {
@@ -120,6 +147,18 @@ export interface BlocksTestimonialSection extends Struct.ComponentSchema {
       'api::testimonial.testimonial'
     >;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsLogo extends Struct.ComponentSchema {
+  collectionName: 'components_elements_logos';
+  info: {
+    displayName: 'Logo';
+    icon: 'apps';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -163,7 +202,10 @@ declare module '@strapi/strapi' {
       'blocks.feature-section': BlocksFeatureSection;
       'blocks.hero-section': BlocksHeroSection;
       'blocks.shows-section': BlocksShowsSection;
+      'blocks.step': BlocksStep;
+      'blocks.step-section': BlocksStepSection;
       'blocks.testimonial-section': BlocksTestimonialSection;
+      'elements.logo': ElementsLogo;
       'links.button': LinksButton;
       'links.social-link': LinksSocialLink;
     }

@@ -17,11 +17,6 @@
       "type": "component",
       "component": "blocks.feature-item",
       "repeatable": true
-    },
-    "cta": {
-      "type": "component",
-      "component": "links.button",
-      "repeatable": false
     }
   },
   "config": {}

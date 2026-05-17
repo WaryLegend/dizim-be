@@ -43,7 +43,8 @@
         "blocks.hero-section",
         "blocks.cta-section",
         "blocks.testimonial-section",
-        "blocks.shows-section"
+        "blocks.shows-section",
+        "blocks.step-section"
       ]
     }
   }

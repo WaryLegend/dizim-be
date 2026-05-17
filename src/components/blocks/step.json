@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_blocks_feature_items",
+  "collectionName": "components_blocks_steps",
   "info": {
-    "displayName": "Feature Item",
-    "icon": "bulletList"
+    "displayName": "Step",
+    "icon": "question"
   },
   "options": {},
   "attributes": {
@@ -11,7 +11,7 @@
       "required": true
     },
     "description": {
-      "type": "blocks"
+      "type": "text"
     },
     "icon": {
       "type": "media",
@@ -20,10 +20,12 @@
         "images"
       ]
     },
-    "button": {
-      "type": "component",
-      "component": "links.button",
-      "repeatable": false
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   },
   "config": {}

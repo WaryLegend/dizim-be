@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_logos",
+  "info": {
+    "displayName": "Logo",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

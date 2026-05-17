@@ -578,6 +578,12 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    logo: Schema.Attribute.Component<'elements.logo', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     open_hours: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -628,6 +634,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'blocks.cta-section',
         'blocks.testimonial-section',
         'blocks.shows-section',
+        'blocks.step-section',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

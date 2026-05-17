@@ -19,6 +19,9 @@
       "default": "ever easy",
       "required": true
     },
+    "description": {
+      "type": "text"
+    },
     "image": {
       "type": "media",
       "multiple": false,
