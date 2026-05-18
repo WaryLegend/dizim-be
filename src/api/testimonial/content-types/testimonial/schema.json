@@ -41,7 +41,7 @@
       }
     },
     "quote": {
-      "type": "string",
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -60,6 +60,16 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "rated": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "min": 0,
+      "max": 5
     }
   }
 }

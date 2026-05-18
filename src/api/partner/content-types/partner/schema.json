@@ -9,11 +9,7 @@
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": false
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string",
@@ -30,10 +26,6 @@
     "url": {
       "type": "string",
       "required": true
-    },
-    "order": {
-      "type": "integer",
-      "default": 0
     }
   }
 }
