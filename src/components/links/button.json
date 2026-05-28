@@ -24,8 +24,7 @@
       ]
     },
     "color": {
-      "type": "string",
-      "regex": "^#([A-Fa-f0-9]{3,4}){1,2}$"
+      "type": "string"
     }
   },
   "config": {}

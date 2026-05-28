@@ -179,6 +179,30 @@ export interface LinksButton extends Struct.ComponentSchema {
   };
 }
 
+export interface LinksLink extends Struct.ComponentSchema {
+  collectionName: 'components_links_links';
+  info: {
+    displayName: 'Link';
+    icon: 'hashtag';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'#'>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface LinksLinkGroup extends Struct.ComponentSchema {
+  collectionName: 'components_links_link_groups';
+  info: {
+    displayName: 'Link group';
+    icon: 'hashtag';
+  };
+  attributes: {
+    links: Schema.Attribute.Component<'links.link', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LinksSocialLink extends Struct.ComponentSchema {
   collectionName: 'components_links_social_links';
   info: {
@@ -207,6 +231,8 @@ declare module '@strapi/strapi' {
       'blocks.testimonial-section': BlocksTestimonialSection;
       'elements.logo': ElementsLogo;
       'links.button': LinksButton;
+      'links.link': LinksLink;
+      'links.link-group': LinksLinkGroup;
       'links.social-link': LinksSocialLink;
     }
   }

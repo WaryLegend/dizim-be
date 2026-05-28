@@ -121,6 +121,16 @@
       },
       "component": "elements.logo",
       "repeatable": true
+    },
+    "navigation": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "links.link-group",
+      "repeatable": false
     }
   }
 }

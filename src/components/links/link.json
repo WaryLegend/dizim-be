@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_links_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "hashtag"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "default": "#",
+      "required": false
+    }
+  },
+  "config": {}
+}
