@@ -15,6 +15,7 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
+    "@google/genai": "^2.6.0",
     "@strapi/plugin-cloud": "5.42.1",
     "@strapi/plugin-users-permissions": "5.42.1",
     "@strapi/strapi": "5.42.1",

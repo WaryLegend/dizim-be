@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chat_histories",
+  "info": {
+    "singularName": "chat-history",
+    "pluralName": "chat-histories",
+    "displayName": "Chat_history"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_message": {
+      "type": "text"
+    },
+    "bot_response": {
+      "type": "text"
+    },
+    "prompt_tokens": {
+      "type": "integer"
+    },
+    "completion_tokens": {
+      "type": "integer"
+    },
+    "chat_session": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chat-session.chat-session",
+      "inversedBy": "chat_histories"
+    }
+  }
+}

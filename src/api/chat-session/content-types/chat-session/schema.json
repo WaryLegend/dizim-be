@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chat_sessions",
+  "info": {
+    "singularName": "chat-session",
+    "pluralName": "chat-sessions",
+    "displayName": "Chat_session"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "session_name": {
+      "type": "string"
+    },
+    "current_mode": {
+      "type": "enumeration",
+      "enum": [
+        "tu_van",
+        "gioi_thieu"
+      ]
+    },
+    "chat_histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::chat-history.chat-history",
+      "mappedBy": "chat_session"
+    }
+  }
+}
